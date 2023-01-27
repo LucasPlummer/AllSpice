@@ -35,4 +35,31 @@ VALUES (
         '639cc49b47c35d04a02a81f0'
     );
 
-DROP TABLE recipes 
+DROP TABLE ingredients;
+
+CREATE TABLE
+    IF NOT EXISTS ingredients(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        quantity VARCHAR(255) NOT NULL,
+        recipeId INT NOT NULL,
+        creatorId VARCHAR(255) NOT NULL,
+        FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE,
+        FOREIGN KEY (recipeId) REFERENCES recipes (id) ON DELETE CASCADE
+    ) default charset utf8 COMMENT '';
+
+CREATE TABLE
+    recipeMembers(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        recipeId INT NOT NULL,
+        accountId VARCHAR(255) NOT NULL,
+        Foreign Key (recipeId) REFERENCES recipes (id) ON DELETE CASCADE,
+        Foreign Key (accountId) REFERENCES accounts(id) ON DELETE CASCADE
+    ) default charset utf8;
+
+INSERT INTO
+    `recipeMembers` (`recipeId`, `accountId`)
+VALUES (
+        32,
+        '639cc49b47c35d04a02a81f0'
+    );

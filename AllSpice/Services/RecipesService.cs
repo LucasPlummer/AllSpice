@@ -30,10 +30,6 @@ public class RecipesService
         {
             throw new Exception("No recipe at that id");
         }
-        if (recipe.CreatorId != userId)
-        {
-            throw new Exception("You don't own that!");
-        }
         return recipe;
     }
 

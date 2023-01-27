@@ -11,6 +11,13 @@ class AccountService {
       logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
     }
   }
+
+  async getAccountRecipes() {
+    const res = await api.get(`api/recipes`);
+    let recipes = res.data
+    let filtered = recipes.filter(r => r.creatorId == AppState.account.id)
+    AppState.recipes = filtered
+  }
 }
 
 export const accountService = new AccountService()

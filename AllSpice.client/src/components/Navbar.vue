@@ -1,33 +1,31 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="../assets/img/cw-logo.png" height="45" />
+  <div class="bg-image m-3 rounded">
+    <nav class="navbar navbar-expand-lg navbar-dark px-3">
+      <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+        <div class="d-flex flex-column align-items-center">
+          <img alt="logo" src="../assets/img/cw-logo.png" height="45" />
+        </div>
+      </router-link>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto">
+          <li>
+            <router-link :to="{ name: 'About' }" class="btn text-light lighten-30 selectable text-uppercase">
+              About
+            </router-link>
+          </li>
+        </ul>
+        <!-- LOGIN COMPONENT HERE -->
+        <Login />
       </div>
-    </router-link>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto">
-        <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
-            About
-          </router-link>
-        </li>
-      </ul>
-      <!-- LOGIN COMPONENT HERE -->
-      <Login />
-    </div>
-  </nav>
+    </nav>
+    <h1 class="text-center text-white">All Spice</h1>
+    <h4 class="text-center text-white">Cherish your family</h4>
+    <h4 class="text-center text-white">And their cooking</h4>
+  </div>
 </template>
 
 <script>
@@ -61,4 +59,11 @@ a:hover {
   }
 }
 
+.bg-image {
+  background-image: url(https://images.unsplash.com/photo-1592309102510-d21b3462187e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80);
+  height: 30vh;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+}
 </style>
