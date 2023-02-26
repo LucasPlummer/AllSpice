@@ -5,7 +5,7 @@
       <div class="col-8 bg-light rounded d-flex elevation-5 p-2 rounded justify-content-evenly m-2">
         <button v-if="account.id" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createModal">New
           Recipe</button>
-        <button class="btn btn-success fw-bold p-2" @click="getRecipes()">All</button>
+        <button class="btn btn-success fw-bold p-2" @click="getRecipes()">All Food</button>
         <button class="btn btn-success fw-bold p-2">Favorites</button>
         <button class="btn btn-success fw-bold p-2" @click="getAccountRecipes()">Your recipes</button>
       </div>
