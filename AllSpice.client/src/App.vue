@@ -6,7 +6,7 @@
     <router-view />
   </main>
   <footer class="bg-dark text-light">
-    Made with 💖 by Lucas Plummer 
+    Made with 💓 by Lucas Plummer. Hope your day is going well!
   </footer>
   <ModalComponent id="recipeModal">
     <RecipeDetails />
